@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>腾讯控股2025年第一季度财务业绩深度分析报告</title>
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        .highlight-text {
+            color: #0070F0;
+            /* Tencent Blue */
+        }
+
+        .highlight-bg {
+            background-color: #0070F0;
+        }
+
+        .highlight-border {
+            border-color: #0070F0;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid #333333;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mini-card {
+            background-color: #222222;
+            border: 1px solid #383838;
+            min-height: 180px;
+            /* Ensure consistent height for grid items */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Center content vertically */
+            align-items: center;
+            /* Center content horizontally */
+            text-align: center;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .mini-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tech-gradient-bg {
+            background-image: linear-gradient(to bottom right, rgba(0, 112, 240, 0.3), rgba(0, 112, 240, 0.1));
+        }
+
+        .tech-gradient-text-bg {
+            background: linear-gradient(to right, rgba(0, 112, 240, 0.7), rgba(0, 112, 240, 0.3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+        }
+
+        /* Chart.js dark theme */
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 40vh;
+            /* Default height */
+            width: 100%;
+            /* Default width */
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 50vh;
+                width: 100%;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #444;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2a2a2a;
+        }
+
+        .section-title-icon {
+            font-size: 2.5rem;
+            /* Adjust as needed */
+            margin-right: 0.75rem;
+            /* Adjust as needed */
+        }
+    </style>
+</head>
+
+<body class="antialiased leading-relaxed">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Main Title -->
+        <header class="text-center py-12 card rounded-2xl mb-12">
+            <i class="fas fa-chart-line highlight-text" style="font-size: 3rem;"></i>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold highlight-text mt-4">腾讯控股2025年第一季度</h1>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold highlight-text">财务业绩深度分析报告</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mt-4">Tencent Holdings Q1 2025 Financial Results Deep Dive
+                Analysis</p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="card rounded-2xl p-6 md:p-8 mb-12 tech-gradient-bg">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-info-circle highlight-text section-title-icon"></i>
+                <h2 class="text-3xl md:text-4xl font-semibold">引言与初步洞察</h2>
+            </div>
+            <p class="text-lg text-gray-300 mb-6">
+                腾讯控股有限公司作为全球领先的技术和互联网综合企业，其业务版图横跨社交、游戏、数字内容、金融科技、云计算及广告等多个领域。本报告旨在基于腾讯发布的2025年第一季度（截至2025年3月31日）未经审计的合并财务报表，对公司在该季度的财务表现进行全面而深入的分析。
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-5xl font-bold highlight-text">稳健</p>
+                    <p class="text-gray-400 mt-2 text-sm">公司展现稳健增长态势，特别是在收入和利润方面取得显著成就。</p>
+                    <p class="text-xs text-gray-500 mt-1">Robust Growth</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-5xl font-bold highlight-text">游戏</p>
+                    <p class="text-gray-400 mt-2 text-sm">游戏业务的强劲复苏成为推动业绩增长的关键动力之一。</p>
+                    <p class="text-xs text-gray-500 mt-1">Gaming Revival</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-5xl font-bold highlight-text">AI</p>
+                    <p class="text-gray-400 mt-2 text-sm">人工智能(AI)技术在广告等业务领域的赋能成为关键动力。</p>
+                    <p class="text-xs text-gray-500 mt-1">AI Empowerment</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold text-white">成本增长</p>
+                    <p class="text-gray-400 mt-2 text-sm">部分成本费用的快速增长对短期盈利能力构成一定影响。</p>
+                    <p class="text-xs text-gray-500 mt-1">Cost Increase</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold text-white">战略投资</p>
+                    <p class="text-gray-400 mt-2 text-sm">战略性投资的持续加码对现金流状况构成一定影响。</p>
+                    <p class="text-xs text-gray-500 mt-1">Strategic Investments</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 1: Company Overall Financial Condition -->
+        <section class="card rounded-2xl p-6 md:p-8 mb-12">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-file-invoice-dollar highlight-text section-title-icon"></i>
+                <h2 class="text-3xl md:text-4xl font-semibold">第一部分：公司整体财务状况概览</h2>
+            </div>
+
+            <!-- 1.1 Core Performance Indicators -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-100">1.1 核心业绩指标</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6 mb-6">
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-4xl md:text-5xl font-bold highlight-text">1800.22<span class="text-2xl">亿</span>
+                        </p>
+                        <p class="text-gray-300 mt-2 text-base">总收入</p>
+                        <p class="text-green-400 mt-1 text-sm">同比增长 13%</p>
+                        <p class="text-xs text-gray-500 mt-1">Total Revenue</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-4xl md:text-5xl font-bold highlight-text">1004.93<span class="text-2xl">亿</span>
+                        </p>
+                        <p class="text-gray-300 mt-2 text-base">毛利润</p>
+                        <p class="text-green-400 mt-1 text-sm">同比增长 20%</p>
+                        <p class="text-xs text-gray-500 mt-1">Gross Profit</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-4xl md:text-5xl font-bold highlight-text">693.20<span class="text-2xl">亿</span>
+                        </p>
+                        <p class="text-gray-300 mt-2 text-base">经营利润 (Non-IFRS)</p>
+                        <p class="text-green-400 mt-1 text-sm">同比增长 18%</p>
+                        <p class="text-xs text-gray-500 mt-1">Operating Profit (Non-IFRS)</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-4xl md:text-5xl font-bold highlight-text">613.29<span class="text-2xl">亿</span>
+                        </p>
+                        <p class="text-gray-300 mt-2 text-base">归母净利润 (Non-IFRS)</p>
+                        <p class="text-green-400 mt-1 text-sm">同比增长 22%</p>
+                        <p class="text-xs text-gray-500 mt-1">Net Profit (Non-IFRS)</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-4xl md:text-5xl font-bold highlight-text">6.735<span class="text-2xl">元</span>
+                        </p>
+                        <p class="text-gray-300 mt-2 text-base">基本每股盈利 (Non-IFRS)</p>
+                        <p class="text-green-400 mt-1 text-sm">同比增长 25%</p>
+                        <p class="text-xs text-gray-500 mt-1">Basic EPS (Non-IFRS)</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-3xl font-bold text-white">盈利质量提升</p>
+                        <p class="text-gray-400 mt-2 text-sm">毛利和Non-IFRS经营利润增速持续快于收入增长 (连续10季度)</p>
+                        <p class="text-xs text-gray-500 mt-1">Improved Profitability Quality</p>
+                    </div>
+                </div>
+                <div class="chart-container mb-6" style="height: 300px;">
+                    <canvas id="coreMetricsChart"></canvas>
+                </div>
+                <p class="text-sm text-gray-500 text-center">*2024年第一季度数据部分根据2025年第一季度数据及同比增长率推算。</p>
+            </div>
+
+            <!-- 1.2 Business Segments -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-100">1.2 各业务分部收入与增长分析</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 mb-6">
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-lg font-semibold highlight-text">增值服务</p>
+                        <p class="text-3xl md:text-4xl font-bold text-white mt-1">921.33<span class="text-xl">亿</span>
+                        </p>
+                        <p class="text-green-400 mt-1 text-sm">同比增长 17%</p>
+                        <p class="text-gray-400 mt-2 text-xs">本土游戏(+24%)和国际游戏(+23%)强劲增长</p>
+                        <p class="text-xs text-gray-500 mt-1">Value-Added Services</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-lg font-semibold highlight-text">营销服务</p>
+                        <p class="text-3xl md:text-4xl font-bold text-white mt-1">318.53<span class="text-xl">亿</span>
+                        </p>
+                        <p class="text-green-400 mt-1 text-sm">同比增长 20%</p>
+                        <p class="text-gray-400 mt-2 text-xs">视频号、小程序、AI赋能广告平台</p>
+                        <p class="text-xs text-gray-500 mt-1">Marketing Services</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-lg font-semibold highlight-text">金融科技及企业服务</p>
+                        <p class="text-3xl md:text-4xl font-bold text-white mt-1">549.07<span class="text-xl">亿</span>
+                        </p>
+                        <p class="text-green-400 mt-1 text-sm">同比增长 5%</p>
+                        <p class="text-gray-400 mt-2 text-xs">消费贷款、财富管理、云服务增长驱动</p>
+                        <p class="text-xs text-gray-500 mt-1">FinTech & Business Services</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-lg font-semibold highlight-text">其他</p>
+                        <p class="text-3xl md:text-4xl font-bold text-white mt-1">11.29<span class="text-xl">亿</span>
+                        </p>
+                        <p class="text-red-400 mt-1 text-sm">同比下降 45%</p>
+                        <p class="text-gray-400 mt-2 text-xs">占比较小，变动显著</p>
+                        <p class="text-xs text-gray-500 mt-1">Others</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/2 chart-container" style="height: 350px;">
+                        <canvas id="revenueBreakdownChart"></canvas>
+                        <p class="text-sm text-gray-500 text-center mt-2">2025年Q1收入构成</p>
+                    </div>
+                    <div class="md:w-1/2 chart-container" style="height: 350px;">
+                        <canvas id="segmentGrowthChart"></canvas>
+                        <p class="text-sm text-gray-500 text-center mt-2">各业务分部同比增长</p>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500 text-center mt-4">*2024年第一季度收入数据部分根据2025年第一季度数据及同比增长率推算。</p>
+            </div>
+
+            <!-- 1.3 Balance Sheet Structure -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-100">1.3 资产负债表结构分析</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-3xl font-bold highlight-text">1.92<span class="text-xl">万亿</span></p>
+                        <p class="text-gray-300 mt-2">总资产</p>
+                        <p class="text-xs text-gray-500 mt-1">As of Mar 31, 2025 / Total Assets</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-3xl font-bold highlight-text">7953<span class="text-xl">亿</span></p>
+                        <p class="text-gray-300 mt-2">总负债</p>
+                        <p class="text-xs text-gray-500 mt-1">Total Liabilities</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-3xl font-bold highlight-text">1.12<span class="text-xl">万亿</span></p>
+                        <p class="text-gray-300 mt-2">股东权益</p>
+                        <p class="text-xs text-gray-500 mt-1">Total Equity</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-3xl font-bold highlight-text">902.29<span class="text-xl">亿</span></p>
+                        <p class="text-gray-300 mt-2">净现金状况</p>
+                        <p class="text-gray-400 mt-1 text-sm">财务稳健，投资回报能力充足</p>
+                        <p class="text-xs text-gray-500 mt-1">Net Cash Position</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-2xl font-bold text-white">投资控股特性</p>
+                        <p class="text-gray-400 mt-2 text-sm">联营公司投资及金融资产规模巨大，远超净资产</p>
+                        <p class="text-xs text-gray-500 mt-1">Investment Holding Feature</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-3xl font-bold highlight-text">1228.82<span class="text-xl">亿</span></p>
+                        <p class="text-gray-300 mt-2">流动递延收入</p>
+                        <p class="text-gray-400 mt-1 text-sm">未来收入的积极信号，反映用户预付意愿</p>
+                        <p class="text-xs text-gray-500 mt-1">Current Deferred Revenue</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.4 Cash Flow Performance -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-gray-100">1.4 现金流量表现</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6">
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-3xl font-bold text-green-400">768.89<span class="text-xl">亿</span></p>
+                        <p class="text-gray-300 mt-2">经营活动现金流净额</p>
+                        <p class="text-gray-400 mt-1 text-sm">核心业务持续产生充裕现金</p>
+                        <p class="text-xs text-gray-500 mt-1">Operating Cash Flow (Net)</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-3xl font-bold text-red-400">295.0<span class="text-xl">亿</span></p>
+                        <!-- Approx from 294.99 -->
+                        <p class="text-gray-300 mt-2">投资活动现金流净流出</p>
+                        <p class="text-gray-400 mt-1 text-sm">反映持续投资，含资本开支</p>
+                        <p class="text-xs text-gray-500 mt-1">Investing Cash Flow (Net Outflow)</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-3xl font-bold text-green-400">248.18<span class="text-xl">亿</span></p>
+                        <p class="text-gray-300 mt-2">融资活动现金流净额</p>
+                        <p class="text-gray-400 mt-1 text-sm">可能源于新增借款，部分被回购股息抵消</p>
+                        <p class="text-xs text-gray-500 mt-1">Financing Cash Flow (Net)</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-3xl font-bold highlight-text">471<span class="text-xl">亿</span></p>
+                        <p class="text-gray-300 mt-2">自由现金流 (FCF)</p>
+                        <p class="text-gray-400 mt-1 text-sm">表现稳健，财务灵活性强</p>
+                        <p class="text-xs text-gray-500 mt-1">Free Cash Flow</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4 col-span-1 sm:col-span-2 lg:col-span-2 xl:col-span-4">
+                        <p class="text-3xl font-bold text-orange-400">资本开支激增</p>
+                        <p class="text-4xl md:text-5xl font-bold text-white mt-1">274.8<span class="text-2xl">亿</span>
+                        </p>
+                        <p class="text-red-400 mt-1 text-lg">同比增长 91%</p>
+                        <p class="text-gray-400 mt-2 text-sm">与AI战略密切相关，短期压低FCF，长期回报待观察</p>
+                        <p class="text-xs text-gray-500 mt-1">Capital Expenditure Surge for AI</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 2: Key Financial Ratios -->
+        <section class="card rounded-2xl p-6 md:p-8 mb-12">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-calculator highlight-text section-title-icon"></i>
+                <h2 class="text-3xl md:text-4xl font-semibold">第二部分：关键财务指标深度分析</h2>
+            </div>
+
+            <!-- 2.1 Liquidity Ratios -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-100">2.1 流动性比率</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-5xl font-bold highlight-text">1.30</p>
+                        <p class="text-gray-300 mt-2 text-base">流动比率</p>
+                        <p class="text-gray-400 mt-1 text-sm">短期偿债能力可接受，低于行业均值(2.14)但高于1.0</p>
+                        <p class="text-xs text-gray-500 mt-1">Current Ratio</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-5xl font-bold highlight-text">1.30</p>
+                        <p class="text-gray-300 mt-2 text-base">速动比率</p>
+                        <p class="text-gray-400 mt-1 text-sm">存货占比极小，快速偿债能力强，高于1.0为良好</p>
+                        <p class="text-xs text-gray-500 mt-1">Quick Ratio</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.2 Leverage Ratios -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-100">2.2 杠杆比率</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-5xl font-bold highlight-text">41.5%</p>
+                        <p class="text-gray-300 mt-2 text-base">资产负债率</p>
+                        <p class="text-gray-400 mt-1 text-sm">中等杠杆水平，高于行业均值(约22.5%)</p>
+                        <p class="text-xs text-gray-500 mt-1">Debt-to-Asset Ratio</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-5xl font-bold highlight-text">76.4%</p>
+                        <p class="text-gray-300 mt-2 text-base">产权比率</p>
+                        <p class="text-gray-400 mt-1 text-sm">可控债务水平，显著高于行业均值(29%-34%)</p>
+                        <p class="text-xs text-gray-500 mt-1">Debt-to-Equity Ratio</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 mt-4 text-center">注：腾讯杠杆水平高于行业平均，可能为支持扩张、投资及回购的战略选择，有强劲现金流支撑。</p>
+            </div>
+
+            <!-- 2.3 Profitability Ratios -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-100">2.3 盈利能力比率</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-5xl font-bold highlight-text">55.8%</p>
+                        <p class="text-gray-300 mt-2 text-base">毛利率</p>
+                        <p class="text-gray-400 mt-1 text-sm">从Q1'24约52.6%提升，非常强劲</p>
+                        <p class="text-xs text-gray-500 mt-1">Gross Profit Margin</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-5xl font-bold highlight-text">38.5%</p>
+                        <p class="text-gray-300 mt-2 text-base">Non-IFRS 营业利润率</p>
+                        <p class="text-gray-400 mt-1 text-sm">从Q1'24约37%提升，核心运营效率提升</p>
+                        <p class="text-xs text-gray-500 mt-1">Non-IFRS Operating Margin</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-5xl font-bold highlight-text">34.1%</p>
+                        <p class="text-gray-300 mt-2 text-base">Non-IFRS 净利率</p>
+                        <p class="text-gray-400 mt-1 text-sm">从Q1'24约31.6%提升，非常健康</p>
+                        <p class="text-xs text-gray-500 mt-1">Non-IFRS Net Profit Margin</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 mt-4 text-center">注：Non-IFRS数据显示利润率扩张趋势，业务健康状况良好，成本管理有效。</p>
+            </div>
+
+            <!-- 2.4 Return Ratios -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4 text-gray-100">2.4 回报率 (年化)</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-5xl font-bold highlight-text">24.4%</p>
+                        <p class="text-gray-300 mt-2 text-base">Non-IFRS 净资产收益率 (ROE)</p>
+                        <p class="text-gray-400 mt-1 text-sm">股东投资回报优异，有效利用股东资本</p>
+                        <p class="text-xs text-gray-500 mt-1">Non-IFRS Return on Equity (Annualized)</p>
+                    </div>
+                    <div class="mini-card rounded-lg p-4">
+                        <p class="text-5xl font-bold highlight-text">13.3%</p>
+                        <p class="text-gray-300 mt-2 text-base">Non-IFRS 总资产报酬率 (ROA)</p>
+                        <p class="text-gray-400 mt-1 text-sm">资产利用效率良好，远超5%门槛</p>
+                        <p class="text-xs text-gray-500 mt-1">Non-IFRS Return on Assets (Annualized)</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 mt-4 text-center">注：ROE显著高于ROA，表明积极的财务杠杆效应。</p>
+            </div>
+        </section>
+
+        <!-- Part 3: Abnormal or Focus Points -->
+        <section class="card rounded-2xl p-6 md:p-8 mb-12">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-exclamation-triangle highlight-text section-title-icon"></i>
+                <h2 class="text-3xl md:text-4xl font-semibold">第三部分：财务报表中的异常或需关注点识别</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold text-orange-400">G&A开支</p>
+                    <p class="text-4xl font-bold text-white mt-1">+36%</p>
+                    <p class="text-gray-400 mt-2 text-sm">含40亿一次性股份支付。调整后仍增长约19.8%，高于收入增速，需关注。</p>
+                    <p class="text-xs text-gray-500 mt-1">G&A Expense Growth</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold text-orange-400">其他收益</p>
+                    <p class="text-4xl font-bold text-white mt-1">转亏</p>
+                    <p class="text-gray-400 mt-2 text-sm">从盈利10.31亿转为亏损13.97亿，波动影响IFRS盈利可比性。</p>
+                    <p class="text-xs text-gray-500 mt-1">Other Income (Net) Fluctuation</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold text-orange-400">财务成本</p>
+                    <p class="text-4xl font-bold text-white mt-1">+37%</p>
+                    <p class="text-gray-400 mt-2 text-sm">主要由于汇兑亏损，凸显外汇风险。</p>
+                    <p class="text-xs text-gray-500 mt-1">Increased Finance Costs</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold text-blue-400">AI投入</p>
+                    <p class="text-gray-400 mt-2 text-sm">研发支出+21% (189亿)，资本开支+91% (275亿)。短期成本压力，长期潜力巨大。</p>
+                    <p class="text-xs text-gray-500 mt-1">Strategic R&D & Capex for AI</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold text-orange-400">"其他"分部</p>
+                    <p class="text-4xl font-bold text-white mt-1">-45%</p>
+                    <p class="text-gray-400 mt-2 text-sm">收入降至11.29亿。占比小但降幅大，可能业务调整。</p>
+                    <p class="text-xs text-gray-500 mt-1">"Others" Segment Revenue Drop</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold text-blue-400">递延收入</p>
+                    <p class="text-4xl font-bold text-white mt-1">1229亿</p>
+                    <p class="text-gray-400 mt-2 text-sm">(流动) 预示未来收入可见性，也代表服务义务。</p>
+                    <p class="text-xs text-gray-500 mt-1">Deferred Revenue Scale</p>
+                </div>
+                <div class="mini-card rounded-lg p-4 col-span-1 sm:col-span-2 lg:col-span-3">
+                    <p class="text-3xl font-bold text-blue-400">投资组合</p>
+                    <p class="text-gray-400 mt-2 text-sm">联营公司投资(3055亿)、各类金融资产(合计超5400亿)规模庞大，贡献收益也带来市场风险。</p>
+                    <p class="text-xs text-gray-500 mt-1">Large Investment Portfolio</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 4: Industry Comparison -->
+        <section class="card rounded-2xl p-6 md:p-8 mb-12">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-balance-scale highlight-text section-title-icon"></i>
+                <h2 class="text-3xl md:text-4xl font-semibold">第四部分：与行业平均水平对比分析</h2>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-100">4.1 综合比率对比摘要</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6">
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">流动性</p>
+                    <p class="text-gray-400 mt-2 text-sm">流动比率(1.30)低于行业均值，但速动比率(1.30)及现金储备表明实际流动性强劲。</p>
+                    <p class="text-xs text-gray-500 mt-1">Liquidity Position</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">杠杆水平</p>
+                    <p class="text-gray-400 mt-2 text-sm">资产负债率(41.5%)、产权比率(76.4%)均高于行业均值，为支持增长和投资的战略选择。</p>
+                    <p class="text-xs text-gray-500 mt-1">Leverage Levels</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">盈利能力</p>
+                    <p class="text-gray-400 mt-2 text-sm">毛利率(55.8%)出色。Non-IFRS营业利润率(38.5%)和净利率(34.1%)健康且具竞争力。</p>
+                    <p class="text-xs text-gray-500 mt-1">Profitability Strength</p>
+                </div>
+                <div class="mini-card rounded-lg p-4 md:col-span-2 lg:col-span-3">
+                    <p class="text-2xl font-bold text-white">回报率</p>
+                    <p class="text-gray-400 mt-2 text-sm">Non-IFRS ROE(24.4%)优异，Non-IFRS ROA(13.3%)良好，显示有效资本利用和杠杆效应。</p>
+                    <p class="text-xs text-gray-500 mt-1">Return Ratios</p>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold mb-4 text-gray-100">4.1.A 腾讯关键财务比率与选定行业平均水平对比</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full">
+                    <thead>
+                        <tr>
+                            <th>财务比率</th>
+                            <th>腾讯 2025 Q1</th>
+                            <th>行业平均: 互联网内容与信息</th>
+                            <th>行业平均: 电子游戏与多媒体 (部分A股公司Q1数据)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>流动比率</td>
+                            <td class="highlight-text">1.30</td>
+                            <td>字节、小红书未公开</td>
+                            <td>完美世界: 1.88, 三七互娱: 1.67</td>
+                        </tr>
+                        <tr>
+                            <td>速动比率</td>
+                            <td class="highlight-text">1.30</td>
+                            <td>同上</td>
+                            <td>完美世界: 1.48, 三七互娱: N/A</td>
+                        </tr>
+                        <tr>
+                            <td>资产负债率</td>
+                            <td class="highlight-text">41.5%</td>
+                            <td>同上</td>
+                            <td>完美世界: 35.9%, 三七互娱: 33.3%</td>
+                        </tr>
+                        <tr>
+                            <td>产权比率 (D/E)</td>
+                            <td class="highlight-text">76.4%</td>
+                            <td>同上</td>
+                            <td>完美世界: 56.9%, 三七互娱: 50.4%</td>
+                        </tr>
+                        <tr>
+                            <td>毛利率</td>
+                            <td class="highlight-text">55.8%</td>
+                            <td>同上</td>
+                            <td>完美世界: 52.3%, 三七互娱: 77.3%</td>
+                        </tr>
+                        <tr>
+                            <td>Non-IFRS 营业利润率</td>
+                            <td class="highlight-text">38.5%</td>
+                            <td>同上</td>
+                            <td>需详细调整</td>
+                        </tr>
+                        <tr>
+                            <td>Non-IFRS 净利率 (归母)</td>
+                            <td class="highlight-text">34.1%</td>
+                            <td>同上</td>
+                            <td>完美世界: 8.07% (扣非), 三七互娱: 12.64% (扣非)</td>
+                        </tr>
+                        <tr>
+                            <td>Non-IFRS ROE (年化)</td>
+                            <td class="highlight-text">24.4%</td>
+                            <td>同上</td>
+                            <td>完美世界: 9.44% (扣非), 三七互娱: 16.28% (扣非)</td>
+                        </tr>
+                        <tr>
+                            <td>Non-IFRS ROA (年化)</td>
+                            <td class="highlight-text">13.3%</td>
+                            <td>同上</td>
+                            <td>完美世界: 5.78% (扣非), 三七互娱: 10.75% (扣非)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-sm text-gray-500 mt-2">*注：行业数据源自报告，部分为推算或基于已公开的同行数据。米哈游、莉莉丝等为私营公司，数据未公开。网易Q1数据在报告编写时待发布。</p>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4 text-gray-100">4.3 分业务板块行业表现摘要</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">游戏业务</p>
+                    <p class="text-gray-400 mt-2 text-sm">全球领导者。本土市场游戏收入+24%，国际市场+23%，增长强劲。</p>
+                    <p class="text-xs text-gray-500 mt-1">Gaming Segment</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">营销服务</p>
+                    <p class="text-gray-400 mt-2 text-sm">同比增长20%，AI赋能和微信生态商业化进展显著，可能超市场整体增速。</p>
+                    <p class="text-xs text-gray-500 mt-1">Marketing Services</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">金融科技</p>
+                    <p class="text-gray-400 mt-2 text-sm">收入持续增长 (作为整体板块5%增长的一部分)。在全球融资降温背景下表现稳健。</p>
+                    <p class="text-xs text-gray-500 mt-1">FinTech Services</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">云计算</p>
+                    <p class="text-gray-400 mt-2 text-sm">企业服务收入增长驱动力之一。全球份额约2%，AI战略推动下具发展潜力。</p>
+                    <p class="text-xs text-gray-500 mt-1">Cloud Computing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 5: Recommendations -->
+        <section class="card rounded-2xl p-6 md:p-8 mb-12">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-lightbulb highlight-text section-title-icon"></i>
+                <h2 class="text-3xl md:text-4xl font-semibold">第五部分：具体改进建议</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">监控G&A</p>
+                    <p class="text-gray-400 mt-2 text-sm">调整后G&A同比增长仍较高(约19.8%)，需密切监控，确保与战略目标一致，严控非必要行政费用。</p>
+                    <p class="text-xs text-gray-500 mt-1">Monitor G&A Growth</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">优化"其他"</p>
+                    <p class="text-gray-400 mt-2 text-sm">调查"其他"收入分部下降45%原因，考虑剥离或重组非战略/亏损业务。</p>
+                    <p class="text-xs text-gray-500 mt-1">Optimize "Others" Segment</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">外汇对冲</p>
+                    <p class="text-gray-400 mt-2 text-sm">鉴于汇兑损失对财务成本影响大，应加强外汇对冲策略。</p>
+                    <p class="text-xs text-gray-500 mt-1">Enhance Forex Hedging</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">追踪AI回报</p>
+                    <p class="text-gray-400 mt-2 text-sm">为AI领域的大量研发和资本开支建立明确衡量指标，追踪投资回报。</p>
+                    <p class="text-xs text-gray-500 mt-1">Track AI Investment ROI</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">审视投资</p>
+                    <p class="text-gray-400 mt-2 text-sm">持续评估庞大投资组合，考虑退出表现不佳项目，资本再配置。</p>
+                    <p class="text-xs text-gray-500 mt-1">Review Investment Portfolio</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">提升透明度</p>
+                    <p class="text-gray-400 mt-2 text-sm">对"其他收益净额"和"其他"收入分部构成提供更详细说明。</p>
+                    <p class="text-xs text-gray-500 mt-1">Improve Transparency</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-white">加速FS增长</p>
+                    <p class="text-gray-400 mt-2 text-sm">探索加速金融科技及企业服务板块增长策略，尤其云服务。</p>
+                    <p class="text-xs text-gray-500 mt-1">Accelerate FinTech & Services Growth</p>
+                </div>
+                <div class="mini-card rounded-lg p-4 col-span-1 sm:col-span-2">
+                    <p class="text-2xl font-bold text-white">保持核心势头</p>
+                    <p class="text-gray-400 mt-2 text-sm">继续投入游戏开发和AI驱动广告技术，保持增值服务和营销服务强劲增长。</p>
+                    <p class="text-xs text-gray-500 mt-1">Maintain Core Momentum</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 6: Summary & Outlook -->
+        <section class="card rounded-2xl p-6 md:p-8 mb-12">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-flag-checkered highlight-text section-title-icon"></i>
+                <h2 class="text-3xl md:text-4xl font-semibold">第六部分：总结与展望</h2>
+            </div>
+
+            <h3 class="text-xl font-semibold mb-4 text-gray-100">6.1 关键财务表现总结</h3>
+            <p class="text-gray-300 mb-4">腾讯Q1 2025展现强劲财务表现：收入稳健增长13%，毛利率提升至55.8%，Non-IFRS净利率达34.1%，Non-IFRS
+                ROE(年化)高达24.4%。游戏复苏和AI赋能广告是主要驱动力。需关注G&A开支增长、外汇影响及AI投入。</p>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4 text-gray-100">6.2 战略举措与未来展望</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 mb-6">
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold highlight-text">AI核心</p>
+                    <p class="text-gray-400 mt-2 text-sm">AI是驱动创新、效率、增长的根本动力。</p>
+                    <p class="text-xs text-gray-500 mt-1">AI as Core Catalyst</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold highlight-text">游戏扩展</p>
+                    <p class="text-gray-400 mt-2 text-sm">依赖常青树游戏，推爆款新作，拓国际市场。</p>
+                    <p class="text-xs text-gray-500 mt-1">Gaming Expansion</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold highlight-text">FS发展</p>
+                    <p class="text-gray-400 mt-2 text-sm">金融科技稳增，云服务具战略意义，AI助推。</p>
+                    <p class="text-xs text-gray-500 mt-1">FinTech & Cloud Dev.</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-3xl font-bold highlight-text">微信生态</p>
+                    <p class="text-gray-400 mt-2 text-sm">深化视频号、小程序商业化及电商发展。</p>
+                    <p class="text-xs text-gray-500 mt-1">WeChat Ecosystem</p>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4 text-gray-100">6.3 潜在风险与挑战</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6 mb-6">
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-orange-400">监管环境</p>
+                    <p class="text-xs text-gray-500 mt-1">Regulatory Landscape</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-orange-400">激烈竞争</p>
+                    <p class="text-xs text-gray-500 mt-1">Intense Competition</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-orange-400">宏观经济</p>
+                    <p class="text-xs text-gray-500 mt-1">Macroeconomic Headwinds</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-orange-400">AI执行风险</p>
+                    <p class="text-xs text-gray-500 mt-1">AI Execution Risk</p>
+                </div>
+                <div class="mini-card rounded-lg p-4">
+                    <p class="text-2xl font-bold text-orange-400">外汇波动</p>
+                    <p class="text-xs text-gray-500 mt-1">Forex Volatility</p>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4 text-gray-100">6.4 整体评估</h3>
+            <p class="text-gray-300">
+                腾讯以令人印象深刻的财务业绩和关键战略进展为2025年奠定坚实开局。多元化业务、强大市场地位和创新追求为其持续增长奠定基础。公司必须在复杂环境中保持警惕，确保大规模战略投资转化为切实回报。Q1业绩展现其韧性和适应能力，向高质量收入转型和AI投入初显成效。未来关键在于持续执行力和长期投入的有效商业化。
+            </p>
+        </section>
+
+        <!-- References -->
+        <section class="card rounded-2xl p-6 md:p-8 mb-12">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-book highlight-text section-title-icon"></i>
+                <h2 class="text-3xl md:text-4xl font-semibold">引用的著作</h2>
+            </div>
+            <ul class="list-decimal list-inside text-sm text-gray-400 space-y-1">
+                <li>static.www.tencent.com, .../01ce3b69d840860f44c0fc7ebca99ee3.pdf</li>
+                <li>investors.tencent.com/zh-cn/investors/quarter-result.html</li>
+                <li>www.aa.com.tr, .../chinese-tech-giant-tencent-reports-13-climb-in-revenue...</li>
+                <li>www.aibase.com/news/18055</li>
+                <li>www.prnewswire.com/apac/news-releases/tencent-announces-2025-first-quarter-results...</li>
+                <li class="truncate hover:whitespace-normal">Investopedia, How Tencent Makes Money</li>
+                <li class="truncate hover:whitespace-normal">LongPort, Tencent Q1 Performance Outlook...</li>
+                <li class="truncate hover:whitespace-normal">CRN, Cloud Market Share Q1 2025...</li>
+                <li class="truncate hover:whitespace-normal">CRN, Microsoft Vs. AWS Vs. Google Cloud Earnings Q1 2025...
+                </li>
+                <li class="truncate hover:whitespace-normal">IG International, Tencent Q1 2025 earnings: AI strategy...
+                </li>
+                <!-- Add other references similarly, keeping them brief -->
+            </ul>
+            <p class="text-xs text-gray-500 mt-4">注：为简洁起见，部分URL已缩略。完整列表见源报告。</p>
+        </section>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Chart.js Global Config
+            Chart.defaults.color = '#e0e0e0'; // Default font color for charts
+            Chart.defaults.borderColor = '#444444'; // Default border color for charts
+
+            // Core Metrics Chart (Example: Revenue and Non-IFRS Net Profit Growth)
+            const coreMetricsCtx = document.getElementById('coreMetricsChart');
+            if (coreMetricsCtx) {
+                new Chart(coreMetricsCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['总收入', '毛利润', 'Non-IFRS经营利润', 'Non-IFRS归母净利润'],
+                        datasets: [{
+                            label: '2025 Q1 同比增长 (%)',
+                            data: [13, 20, 18, 22],
+                            backgroundColor: [
+                                'rgba(0, 112, 240, 0.6)', // Highlight color with alpha
+                                'rgba(0, 112, 240, 0.5)',
+                                'rgba(0, 112, 240, 0.4)',
+                                'rgba(0, 112, 240, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(0, 112, 240, 1)',
+                                'rgba(0, 112, 240, 1)',
+                                'rgba(0, 112, 240, 1)',
+                                'rgba(0, 112, 240, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: { display: true, text: '同比增长 (%)' },
+                                grid: { color: '#333' }
+                            },
+                            x: {
+                                grid: { display: false }
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            title: { display: true, text: '核心业绩指标同比增长率 (2025 Q1)', color: '#e0e0e0', font: { size: 16 } }
+                        }
+                    }
+                });
+            }
+
+            // Revenue Breakdown Chart
+            const revenueBreakdownCtx = document.getElementById('revenueBreakdownChart');
+            if (revenueBreakdownCtx) {
+                new Chart(revenueBreakdownCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['增值服务 (51.2%)', '营销服务 (17.7%)', '金融科技及企业服务 (30.5%)', '其他 (0.6%)'],
+                        datasets: [{
+                            label: '收入占比',
+                            data: [92133, 31853, 54907, 1129], // Actual values
+                            backgroundColor: [
+                                'rgba(0, 112, 240, 0.7)',
+                                'rgba(0, 112, 240, 0.5)',
+                                'rgba(0, 112, 240, 0.3)',
+                                'rgba(100, 100, 100, 0.5)'
+                            ],
+                            borderColor: '#1a1a1a',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { color: '#e0e0e0' } },
+                            title: { display: false } // Title provided as p tag
+                        }
+                    }
+                });
+            }
+
+            // Segment Growth Chart
+            const segmentGrowthCtx = document.getElementById('segmentGrowthChart');
+            if (segmentGrowthCtx) {
+                new Chart(segmentGrowthCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['增值服务', '营销服务', '金融科技及企业服务', '其他'],
+                        datasets: [{
+                            label: '同比增长 (%)',
+                            data: [17, 20, 5, -45],
+                            backgroundColor: [
+                                'rgba(0, 200, 83, 0.6)', // Green for positive
+                                'rgba(0, 200, 83, 0.6)',
+                                'rgba(0, 200, 83, 0.6)',
+                                'rgba(255, 82, 82, 0.6)'  // Red for negative
+                            ],
+                            borderColor: [
+                                'rgba(0, 200, 83, 1)',
+                                'rgba(0, 200, 83, 1)',
+                                'rgba(0, 200, 83, 1)',
+                                'rgba(255, 82, 82, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                title: { display: true, text: '同比增长 (%)' },
+                                grid: { color: '#333' }
+                            },
+                            x: {
+                                grid: { display: false }
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            title: { display: false } // Title provided as p tag
+                        }
+                    }
+                });
+            }
+
+            // Intersection Observer for animations
+            const animatedElements = document.querySelectorAll('.card, .mini-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Apply a staggered delay for mini-cards if they are in a grid
+                        const delay = entry.target.classList.contains('mini-card') ? index * 50 : 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, delay);
+                        observer.unobserve(entry.target); // Optional: stop observing after animation
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
